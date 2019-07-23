@@ -129,11 +129,11 @@
     };
     //# sourceMappingURL=index.js.map
 
-    var appName$1 = "reactAppOne";
+    var appName$1 = "appCra";
     //# sourceMappingURL=app_name.js.map
 
-    var bundle = "http://localhost:9000/react-app-one/js/bundle.js";
-    var mainChunk = "http://localhost:9000/react-app-one/js/main.chunk.js";
+    var bundle = "http://localhost:9000/app-cra/js/bundle.js";
+    var mainChunk = "http://localhost:9000/app-cra/js/main.chunk.js";
     var loader$1 = function () {
         return lowLoader["import"](bundle)
             .then(function (b) {
@@ -146,17 +146,17 @@
         });
     };
     // <script src="js/bundle.js"></script><script src="js/1.chunk.js"></script><script src="js/main.chunk.js"></script>
+    //# sourceMappingURL=loader.js.map
 
-    var router$1 = function (location) { return true; };
-    //# sourceMappingURL=router.js.map
+    var router$1 = function (location) { return location.pathname.startsWith("/app-cra"); };
 
-    var reactAppOne = function () {
+    var appCra = function () {
         return Pt(appName$1, loader$1, router$1);
     };
     //# sourceMappingURL=index.js.map
 
     appNavigation();
-    reactAppOne();
+    appCra();
     Ct();
 
 }));

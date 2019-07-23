@@ -1,5 +1,5 @@
 {
-  "name": "react-app-one",
+  "name": "app-cra",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -61,7 +61,7 @@
     "workbox-webpack-plugin": "4.2.0"
   },
   "scripts": {
-    "start": "cra-build-watch --build-path ../server/webroot/react-app-one",
+    "start": "cra-build-watch --build-path ../server/webroot/app-cra",
     "start:standalone": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"

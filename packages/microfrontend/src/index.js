@@ -1,7 +1,7 @@
 import * as singleSpa from "single-spa";
 import { appNavigation } from "./apps/app-navigation";
-import { reactAppOne } from "./apps/react-app-one";
+import { appCra } from "./apps/app-cra";
 
 appNavigation();
-reactAppOne();
+appCra();
 singleSpa.start();

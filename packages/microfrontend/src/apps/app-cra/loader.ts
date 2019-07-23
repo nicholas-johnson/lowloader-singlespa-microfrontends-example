@@ -1,7 +1,7 @@
 import lowloader from "lowloader";
 
-const bundle = "http://localhost:9000/react-app-one/js/bundle.js";
-const mainChunk = "http://localhost:9000/react-app-one/js/main.chunk.js";
+const bundle = "http://localhost:9000/app-cra/js/bundle.js";
+const mainChunk = "http://localhost:9000/app-cra/js/main.chunk.js";
 
 export const loader = () =>
   lowloader

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server webroot --port=9000"
+    "start": "live-server webroot --port=9000 --entry-file=webroot/index.html"
   },
   "author": "",
   "license": "ISC",

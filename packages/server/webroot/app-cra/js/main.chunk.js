@@ -1,4 +1,34 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/App.css ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 40vmin;\n  pointer-events: none;\n}\n\n.App-header {\n  background-color: #282c34;\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  font-size: calc(10px + 2vmin);\n  color: white;\n}\n\n.App-link {\n  color: #61dafb;\n}\n\n@keyframes App-logo-spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!./node_modules/postcss-loader/src??postcss!./src/index.css ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, "body {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\",\n    \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\",\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, \"Courier New\",\n    monospace;\n}\n", ""]);
+
+
+
+/***/ }),
 
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
@@ -25976,6 +26006,286 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/single-spa-react/lib/single-spa-react.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/single-spa-react/lib/single-spa-react.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else { var mod; }
+})(this, function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports["default"] = singleSpaReact;
+  _exports.SingleSpaContext = void 0;
+
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      var ownKeys = Object.keys(source);
+
+      if (typeof Object.getOwnPropertySymbols === 'function') {
+        ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+        }));
+      }
+
+      ownKeys.forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    }
+
+    return target;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function _typeof(obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function _typeof(obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+  /* We don't import parcel.component.js from this file intentionally. See comment
+   * in that file for why
+   */
+  // React context that gives any react component the single-spa props
+
+
+  var SingleSpaContext = null;
+  _exports.SingleSpaContext = SingleSpaContext;
+  var defaultOpts = {
+    // required opts
+    React: null,
+    ReactDOM: null,
+    rootComponent: null,
+    loadRootComponent: null,
+    suppressComponentDidCatchWarning: false,
+    // optional opts
+    domElementGetter: null,
+    parcelCanUpdate: true // by default, allow parcels created with single-spa-react to be updated
+
+  };
+
+  function singleSpaReact(userOpts) {
+    if (_typeof(userOpts) !== 'object') {
+      throw new Error("single-spa-react requires a configuration object");
+    }
+
+    var opts = _objectSpread({}, defaultOpts, userOpts);
+
+    if (!opts.React) {
+      throw new Error("single-spa-react must be passed opts.React");
+    }
+
+    if (!opts.ReactDOM) {
+      throw new Error("single-spa-react must be passed opts.ReactDOM");
+    }
+
+    if (!opts.rootComponent && !opts.loadRootComponent) {
+      throw new Error("single-spa-react must be passed opts.rootComponent or opts.loadRootComponent");
+    }
+
+    if (!SingleSpaContext && opts.React.createContext) {
+      _exports.SingleSpaContext = SingleSpaContext = opts.React.createContext();
+    }
+
+    var lifecycles = {
+      bootstrap: bootstrap.bind(null, opts),
+      mount: mount.bind(null, opts),
+      unmount: unmount.bind(null, opts)
+    };
+
+    if (opts.parcelCanUpdate) {
+      lifecycles.update = update.bind(null, opts);
+    }
+
+    return lifecycles;
+  }
+
+  function bootstrap(opts, props) {
+    if (opts.rootComponent) {
+      // This is a class or stateless function component
+      return Promise.resolve();
+    } else {
+      // They passed a promise that resolves with the react component. Wait for it to resolve before mounting
+      return opts.loadRootComponent().then(function (resolvedComponent) {
+        opts.rootComponent = resolvedComponent;
+      });
+    }
+  }
+
+  function mount(opts, props) {
+    return new Promise(function (resolve, reject) {
+      if (!opts.suppressComponentDidCatchWarning && atLeastReact16(opts.React)) {
+        if (!opts.rootComponent.prototype) {
+          console.warn("single-spa-react: ".concat(props.name || props.appName || props.childAppName, "'s rootComponent does not have a prototype.  If using a functional component, wrap it in an error boundary or other class that implements componentDidCatch to avoid accidentally unmounting the entire single-spa application"));
+        } else if (!opts.rootComponent.prototype.componentDidCatch) {
+          console.warn("single-spa-react: ".concat(props.name || props.appName || props.childAppName, "'s rootComponent should implement componentDidCatch to avoid accidentally unmounting the entire single-spa application."));
+        }
+      }
+
+      var domElementGetter = chooseDomElementGetter(opts, props);
+
+      if (typeof domElementGetter !== 'function') {
+        throw new Error("single-spa-react: the domElementGetter for react application '".concat(props.appName || props.name, "' is not a function"));
+      }
+
+      var whenFinished = function whenFinished() {
+        resolve(this);
+      };
+
+      var rootComponentElement = opts.React.createElement(opts.rootComponent, props);
+      var elementToRender = SingleSpaContext ? opts.React.createElement(SingleSpaContext.Provider, {
+        value: props
+      }, rootComponentElement) : rootComponentElement;
+      var domElement = getRootDomEl(domElementGetter, props);
+      var renderedComponent = reactDomRender({
+        elementToRender: elementToRender,
+        domElement: domElement,
+        whenFinished: whenFinished,
+        opts: opts
+      });
+      opts.domElement = domElement;
+    });
+  }
+
+  function unmount(opts, props) {
+    return Promise.resolve().then(function () {
+      opts.ReactDOM.unmountComponentAtNode(opts.domElement);
+    });
+  }
+
+  function update(opts, props) {
+    return new Promise(function (resolve, reject) {
+      var whenFinished = function whenFinished() {
+        resolve(this);
+      };
+
+      var rootComponentElement = opts.React.createElement(opts.rootComponent, props);
+      var elementToRender = SingleSpaContext ? opts.React.createElement(SingleSpaContext.Provider, {
+        value: props
+      }, rootComponentElement) : rootComponentElement;
+      var renderedComponent = reactDomRender({
+        elementToRender: elementToRender,
+        domElement: opts.domElement,
+        whenFinished: whenFinished,
+        opts: opts
+      });
+    });
+  }
+
+  function getRootDomEl(domElementGetter, props) {
+    var el = domElementGetter();
+
+    if (!el) {
+      throw new Error("single-spa-react: domElementGetter function for application '".concat(props.appName || props.name, "' did not return a valid dom element. Please pass a valid domElement or domElementGetter via opts or props"));
+    }
+
+    return el;
+  }
+
+  function atLeastReact16(React) {
+    if (React && typeof React.version === 'string' && React.version.indexOf('.') >= 0) {
+      var majorVersionString = React.version.slice(0, React.version.indexOf('.'));
+
+      try {
+        return Number(majorVersionString) >= 16;
+      } catch (err) {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  function chooseDomElementGetter(opts, props) {
+    props = props && props.customProps ? props.customProps : props;
+
+    if (props.domElement) {
+      return function () {
+        return props.domElement;
+      };
+    } else if (props.domElementGetter) {
+      return props.domElementGetter;
+    } else if (opts.domElementGetter) {
+      return opts.domElementGetter;
+    } else {
+      return defaultDomElementGetter(props);
+    }
+  }
+
+  function defaultDomElementGetter(props) {
+    var htmlId = "single-spa-application:".concat(props.appName || props.name);
+
+    if (!htmlId) {
+      throw Error("single-spa-react was not given an application name as a prop, so it can't make a unique dom element container for the react application");
+    }
+
+    return function defaultDomEl() {
+      var domElement = document.getElementById(htmlId);
+
+      if (!domElement) {
+        domElement = document.createElement('div');
+        domElement.id = htmlId;
+        document.body.appendChild(domElement);
+      }
+
+      return domElement;
+    };
+  }
+
+  function reactDomRender(_ref) {
+    var opts = _ref.opts,
+        elementToRender = _ref.elementToRender,
+        domElement = _ref.domElement,
+        whenFinished = _ref.whenFinished;
+
+    if (opts.renderType === 'createRoot') {
+      return opts.ReactDOM.createRoot(domElement).render(elementToRender, whenFinished);
+    }
+
+    if (opts.renderType === 'hydrate') {
+      return opts.ReactDOM.hydrate(elementToRender, domElement, whenFinished);
+    } // default to this if 'renderType' is null or doesn't match the other options
+
+
+    return opts.ReactDOM.render(elementToRender, domElement, whenFinished);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -26505,7 +26815,240 @@ try {
 
 module.exports = g;
 
+/***/ }),
+
+/***/ "./src/App.css":
+/*!*********************!*\
+  !*** ./src/App.css ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./App.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/App.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/App.js":
+/*!********************!*\
+  !*** ./src/App.js ***!
+  \********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logo.svg */ "./src/logo.svg");
+/* harmony import */ var _logo_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_logo_svg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/nicholas/code/lowloader-singlespa-microfrontends-example/packages/app-cra/src/App.js";
+
+
+
+
+function App() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "App",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "App-header",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: _logo_svg__WEBPACK_IMPORTED_MODULE_1___default.a,
+    className: "App-logo",
+    alt: "logo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, "Edit ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, "src/App.js"), " and save to reload."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "App-link",
+    href: "https://reactjs.org",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "Learn React")));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js??ref--6-oneOf-3-1!../node_modules/postcss-loader/src??postcss!./index.css */ "./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./src/index.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var lowloader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lowloader */ "./node_modules/lowloader/lib/index.js");
+/* harmony import */ var single_spa_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! single-spa-react */ "./node_modules/single-spa-react/lib/single-spa-react.js");
+/* harmony import */ var single_spa_react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(single_spa_react__WEBPACK_IMPORTED_MODULE_5__);
+var _jsxFileName = "/Users/nicholas/code/lowloader-singlespa-microfrontends-example/packages/app-cra/src/index.js";
+
+
+
+
+
+
+const el = document.getElementById("app-cra-standalone");
+
+if (el) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }), el);
+}
+
+const domElementGetter = () => {
+  var el = document.getElementById("app-cra");
+
+  if (!el) {
+    el = document.createElement("div");
+    el.id = "app-cra";
+    document.body.appendChild(el);
+  }
+
+  return el;
+};
+
+const app = single_spa_react__WEBPACK_IMPORTED_MODULE_5___default()({
+  React: (react__WEBPACK_IMPORTED_MODULE_0___default()),
+  ReactDOM: (react_dom__WEBPACK_IMPORTED_MODULE_1___default()),
+  domElementGetter: domElementGetter,
+  rootComponent: _App__WEBPACK_IMPORTED_MODULE_3__["default"],
+  App: _App__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+lowloader__WEBPACK_IMPORTED_MODULE_4__["default"].export(app); // const appSecondaryNav = singleSpaReact({
+//     React,
+//     ReactDOM,
+//     domElementGetter: domElementGetter,
+//     rootComponent: AppSecondaryNav,
+// });
+// export function bootstrap(props) {
+//     return appSecondaryNav.bootstrap(props);
+// }
+// export function mount(props) {
+//     return appSecondaryNav.mount(props);
+// }
+// export function unmount(props) {
+//     return appSecondaryNav.unmount(props);
+// }
+// window.bmr = window.bmr || {};
+// window.bmr.appSecondaryNav = appSecondaryNav;
+
+/***/ }),
+
+/***/ "./src/logo.svg":
+/*!**********************!*\
+  !*** ./src/logo.svg ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "media/logo.5d5d9eef.svg";
+
+/***/ }),
+
+/***/ 0:
+/*!****************************!*\
+  !*** multi ./src/index.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /Users/nicholas/code/lowloader-singlespa-microfrontends-example/packages/app-cra/src/index.js */"./src/index.js");
+
+
 /***/ })
 
-}]);
-//# sourceMappingURL=1.chunk.js.map
+},[[0,"runtime~main"]]]);
+//# sourceMappingURL=main.chunk.js.map

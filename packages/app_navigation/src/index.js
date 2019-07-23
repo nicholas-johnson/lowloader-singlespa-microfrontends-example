@@ -16,7 +16,7 @@ const style = `
     padding:0;
   }
   ul#app-navigation-container a {
-    
+
   }
 `;
 const title =
@@ -28,10 +28,10 @@ const template = `
     id="app-navigation-container" 
     title="${title}">
     <li>
-      <a href="/#app-one">App One</a>
+      <a href="app-cra">Create React App</a>
     </li>
     <li>
-      <a href="/#app-two">App Two</a>
+      <a href="/app-two">App Two</a>
     </li>
   </ul>
 `;
@@ -40,6 +40,13 @@ const app = {
   bootstrap: () => Promise.resolve(),
   mount: () => {
     el.innerHTML = template;
+    Array.from(el.getElementsByTagName("a")).forEach(a => {
+      a.onclick = evt => {
+        history.pushState({}, null, a.href);
+        console.log("navigating to ", a.href);
+        evt.preventDefault();
+      };
+    });
     return Promise.resolve();
   },
   unmount: () => {

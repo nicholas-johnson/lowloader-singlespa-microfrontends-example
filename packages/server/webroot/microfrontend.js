@@ -129,7 +129,34 @@
     };
     //# sourceMappingURL=index.js.map
 
+    var appName$1 = "reactAppOne";
+    //# sourceMappingURL=app_name.js.map
+
+    var bundle = "http://localhost:9000/react-app-one/js/bundle.js";
+    var mainChunk = "http://localhost:9000/react-app-one/js/main.chunk.js";
+    var loader$1 = function () {
+        return lowLoader["import"](bundle)
+            .then(function (b) {
+            console.log("b", b);
+            return lowLoader["import"](mainChunk);
+        })
+            .then(function (c) {
+            console.log("c", c);
+            return c;
+        });
+    };
+    // <script src="js/bundle.js"></script><script src="js/1.chunk.js"></script><script src="js/main.chunk.js"></script>
+
+    var router$1 = function (location) { return true; };
+    //# sourceMappingURL=router.js.map
+
+    var reactAppOne = function () {
+        return Pt(appName$1, loader$1, router$1);
+    };
+    //# sourceMappingURL=index.js.map
+
     appNavigation();
+    reactAppOne();
     Ct();
 
 }));

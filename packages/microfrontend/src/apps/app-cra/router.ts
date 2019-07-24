@@ -1,1 +1,1 @@
-export const router = location => location.pathname.startsWith("/app-cra");
+export const router = location => location.pathname.startsWith("/cra");

@@ -16,7 +16,10 @@ const style = `
     padding:0;
   }
   ul#app-navigation-container a {
-
+    display:inline-block;
+    text-decoration:none;
+    color:black;
+    padding:10px;
   }
 `;
 const title =
@@ -28,10 +31,10 @@ const template = `
     id="app-navigation-container" 
     title="${title}">
     <li>
-      <a href="app-cra">Create React App</a>
+      <a href="/cra">Create React App</a>
     </li>
     <li>
-      <a href="/app-two">App Two</a>
+      <a href="/legacy">Legacy AngularJS App</a>
     </li>
   </ul>
 `;

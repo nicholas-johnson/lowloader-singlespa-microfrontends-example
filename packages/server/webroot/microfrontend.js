@@ -148,15 +148,32 @@
     // <script src="js/bundle.js"></script><script src="js/1.chunk.js"></script><script src="js/main.chunk.js"></script>
     //# sourceMappingURL=loader.js.map
 
-    var router$1 = function (location) { return location.pathname.startsWith("/app-cra"); };
+    var router$1 = function (location) { return location.pathname.startsWith("/cra"); };
+    //# sourceMappingURL=router.js.map
 
     var appCra = function () {
         return Pt(appName$1, loader$1, router$1);
     };
     //# sourceMappingURL=index.js.map
 
+    var appName$2 = "appLegacy";
+    //# sourceMappingURL=app_name.js.map
+
+    var loader$2 = function () {
+        return lowLoader["import"]("http://localhost:9000/app-legacy/app.bundle.js");
+    };
+    //# sourceMappingURL=loader.js.map
+
+    var router$2 = function (location) { return location.pathname.startsWith("/legacy"); };
+
+    var appLegacy = function () {
+        return Pt(appName$2, loader$2, router$2);
+    };
+    //# sourceMappingURL=index.js.map
+
     appNavigation();
     appCra();
+    appLegacy();
     Ct();
 
 }));

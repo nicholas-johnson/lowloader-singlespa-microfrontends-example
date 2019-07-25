@@ -28,7 +28,7 @@ To build individual microapps, cd into the correct app folder and:
 
     yarn start
 
-Each app has a different build process.
+Each app has a different build process, and you may have multiple build processes running at once. I suggest using different tabs for this in a terminal app such as iTerm.
 
 ## Monorepo
 

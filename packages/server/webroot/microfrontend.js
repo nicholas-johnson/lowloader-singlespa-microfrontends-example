@@ -165,6 +165,7 @@
     //# sourceMappingURL=loader.js.map
 
     var router$2 = function (location) { return location.pathname.startsWith("/legacy"); };
+    //# sourceMappingURL=router.js.map
 
     var appLegacy = function () {
         return Pt(appName$2, loader$2, router$2);

@@ -142,6 +142,9 @@
     id="app-navigation-container" 
     title="${title}">
     <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
       <a href="/cra">Create React App</a>
     </li>
     <li>
